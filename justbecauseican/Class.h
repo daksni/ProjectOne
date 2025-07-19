@@ -7,7 +7,7 @@
 
 class Class
 {
-private:
+public:
 	const enum PlayerClass {
 		KNIGHT = 1,
 		WIZARD = 2,
@@ -16,10 +16,6 @@ private:
 		WRETCH = 5
 	};
 public:
-	void Knight(Player* player);
-	void Wizard(Player* player);
-	void Bard(Player* player);
-	void Noble(Player* player);
-	void Wretch(Player* player);
+	void setAttributesAccordinglyToPlayerClassOfChoice(Player* player);
 };
 

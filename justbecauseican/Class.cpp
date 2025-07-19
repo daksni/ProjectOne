@@ -4,24 +4,23 @@
 
 #include "Class.h"
 
-void Class::Knight(Player* player) {
-	if (player->getPlayerClass() == PlayerClass::KNIGHT) {
-		//Set Player attributes according to class.
+void Class::setAttributesAccordinglyToPlayerClassOfChoice(Player* player) {
+	switch (player->getPlayerClass()) {
+	case PlayerClass::KNIGHT:
+		//do smth
+		break;
+	case PlayerClass::WIZARD:
+		//do smth
+		break;
+	case PlayerClass::BARD:
+		//do smth
+		break;
+	case PlayerClass::NOBLE:
+		//do smth
+		break;
+	case PlayerClass::WRETCH:
+		//do smth
+		break;
 	}
 }
 
-void Class::Wizard(Player* player) {
-
-}
-
-void Class::Bard(Player* player) {
-
-}
-
-void Class::Noble(Player* player) {
-
-}
-
-void Class::Wretch(Player* player) {
-
-}
