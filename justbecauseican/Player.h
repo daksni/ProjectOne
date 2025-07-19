@@ -1,3 +1,7 @@
+//This code is property of Elder Bone Software.
+//Developed by Lead Engine Programmer: Daniel M. S. A.
+//The usage of this code freely is allowed as long as the author is dued credited.
+
 #pragma once
 
 #include <string>
@@ -12,6 +16,7 @@ private:
 	std::string playerName;
 	bool isPlayerDead;
 	int playerGender;
+	int playerClass;
 
 public:
 
@@ -20,11 +25,13 @@ public:
 	std::string getPlayerName() const;
 	bool getIsPlayerDead() const;
 	int getPlayerGender() const;
+	int getPlayerClass() const;
 
 	//Setter arguments.
 	void setPlayerLife(int life);
 	void setPlayerName(std::string name);
 	void setIsPlayerDead(bool localIsPlayerDead);
 	void setPlayerGender(int gender);
+	void setPlayerClass(int pClass);
 };
 
