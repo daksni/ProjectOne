@@ -72,3 +72,52 @@ void Player::setPlayerAttributesAccordinglyToClass() {
 		break;
 	}
 }
+
+void Player::vomitAllAttr() {
+
+	std::string gender;
+	std::string pClass;
+	std::string isDead;
+
+	if (Player::getPlayerGender() == 1) {
+		gender = "Male";
+	}
+	else if (Player::getPlayerGender() == 2) {
+		gender = "Female";
+	}
+
+	switch (Player::getPlayerClass()) {
+	case PlayerClass::KNIGHT:
+		pClass = "Knight";
+		break;
+
+	case PlayerClass::WIZARD:
+		pClass = "Wizard";
+		break;
+
+	case PlayerClass::BARD:
+		pClass = "Bard";
+		break;
+
+	case PlayerClass::NOBLE:
+		pClass = "Noble";
+		break;
+
+	case PlayerClass::WRETCH:
+		pClass = "Wretch";
+		break;
+	}
+
+	if (Player::getIsPlayerDead() == true) {
+		isDead = "Yes";
+	}
+	else if (Player::getIsPlayerDead() == false) {
+		isDead = "No";
+	}
+
+	std::cout << "\n\nHere are your attributes:\nName: " << Player::getPlayerName() << "\n" <<
+		"Gender: " << gender << "\n" <<
+		"Class: " << pClass << "\n" <<
+		"Is player dead?: " << isDead << "\n" <<
+		"Player life: " << Player::getPlayerLife();
+}

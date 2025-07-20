@@ -5,6 +5,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 
 
 class Player
@@ -44,5 +45,7 @@ public:
 	void setPlayerClass(int pClass);
 
 	void setPlayerAttributesAccordinglyToClass();
+
+	void vomitAllAttr();
 };
 

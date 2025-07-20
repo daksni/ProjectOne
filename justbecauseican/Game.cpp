@@ -109,6 +109,7 @@ void Game::settingThePlayerClass(Player* player, Pronouns* pronouns) {
 	}
 
 	player->setPlayerAttributesAccordinglyToClass();
+	player->vomitAllAttr();
 
 }
 
