@@ -11,7 +11,6 @@
 
 #include "Player.h"
 #include "Pronouns.h"
-#include "Class.h"
 
 class Game
 {
@@ -21,7 +20,7 @@ public:
 
 	void settingHowThePlayerShouldBeCalled(Player* player);
 	void settingThePlayerGender(Player* player);
-	void settingThePlayerClass(Player* player, Pronouns* pronouns, Class* pClass);
+	void settingThePlayerClass(Player* player, Pronouns* pronouns);
 
 	int run();
 

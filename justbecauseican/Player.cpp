@@ -46,3 +46,29 @@ void Player::setPlayerGender(int gender) {
 void Player::setPlayerClass(int pClass) {
 	playerClass = pClass;
 }
+
+//Worth noting: there shall be more attr to change... for now though
+//that is all my lazy ass has built.
+void Player::setPlayerAttributesAccordinglyToClass() {
+	switch (Player::getPlayerClass()) {
+	case PlayerClass::KNIGHT:
+		Player::setPlayerLife(1000);
+		break;
+
+	case PlayerClass::WIZARD:
+		Player::setPlayerLife(800);
+		break;
+
+	case PlayerClass::BARD:
+		Player::setPlayerLife(800);
+		break;
+
+	case PlayerClass::NOBLE:
+		Player::setPlayerLife(500);
+		break;
+
+	case PlayerClass::WRETCH:
+		Player::setPlayerLife(300);
+		break;
+	}
+}

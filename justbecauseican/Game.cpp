@@ -61,7 +61,7 @@ void Game::settingThePlayerGender(Player* player) {
 
 }
 
-void Game::settingThePlayerClass(Player* player, Pronouns* pronouns, Class* pClass) {
+void Game::settingThePlayerClass(Player* player, Pronouns* pronouns) {
 
 	std::string setupClass;
 
@@ -76,32 +76,39 @@ void Game::settingThePlayerClass(Player* player, Pronouns* pronouns, Class* pCla
 
 	ClassWheel classWheel;
 
-	std::cout << "\nGreat, now what class does " << pronouns->getLSubject(player) << " belongs to?\nType [1] for knight, [2] for Wizard, [3] for Bard, [4] for Noble or [5] for Wretch: ";
+	std::cout << "\nGreat, now what class does " << pronouns->getLSubject(player) <<
+		" belongs to?\nType [1] for knight, [2] for Wizard, [3] for Bard, [4] for Noble or [5] for Wretch: ";
 	std::getline(std::cin, setupClass);
 
-	while (setupClass.empty() && (setupClass != classWheel.INPUT_KNIGHT || setupClass != classWheel.INPUT_WIZARD || setupClass != classWheel.INPUT_BARD || setupClass != classWheel.INPUT_NOBLE || setupClass != classWheel.INPUT_WRETCH)) {
+	//Maybe there are better ways of doing this... but let me be.
+	while (setupClass.empty() || (setupClass != classWheel.INPUT_KNIGHT &&
+		setupClass != classWheel.INPUT_WIZARD &&
+		setupClass != classWheel.INPUT_BARD &&
+		setupClass != classWheel.INPUT_NOBLE &&
+		setupClass != classWheel.INPUT_WRETCH)) {
+
 		std::cout << "\nThe provided class is nonexistent! Please, choose again!";
 		std::getline(std::cin, setupClass);
 
 	}
 
 	if (setupClass == classWheel.INPUT_KNIGHT) {
-		player->setPlayerClass(pClass->PlayerClass::KNIGHT);
+		player->setPlayerClass(player->PlayerClass::KNIGHT);
 	}
 	else if (setupClass == classWheel.INPUT_WIZARD) {
-		player->setPlayerClass(pClass->PlayerClass::WIZARD);
+		player->setPlayerClass(player->PlayerClass::WIZARD);
 	}
 	else if (setupClass == classWheel.INPUT_BARD) {
-		player->setPlayerClass(pClass->PlayerClass::BARD);
+		player->setPlayerClass(player->PlayerClass::BARD);
 	}
 	else if (setupClass == classWheel.INPUT_NOBLE) {
-		player->setPlayerClass(pClass->PlayerClass::NOBLE);
+		player->setPlayerClass(player->PlayerClass::NOBLE);
 	}
 	else if (setupClass == classWheel.INPUT_WRETCH) {
-		player->setPlayerClass(pClass->PlayerClass::WRETCH);
+		player->setPlayerClass(player->PlayerClass::WRETCH);
 	}
 
-	pClass->setAttributesAccordinglyToPlayerClassOfChoice(player);
+	player->setPlayerAttributesAccordinglyToClass();
 
 }
 
@@ -111,7 +118,6 @@ int Game::run() {
 
 	Player* player = new Player();
 	Pronouns* pronouns = new Pronouns();
-	Class* pClass = new Class();
 
 	std::cout << "Hello, welcome to this prototype!\n";
 
@@ -119,16 +125,13 @@ int Game::run() {
 
 	settingThePlayerGender(player);
 
-	settingThePlayerClass(player, pronouns, pClass);
+	settingThePlayerClass(player, pronouns);
 
 	delete player;
 	player = nullptr;
 
 	delete pronouns;
 	pronouns = nullptr;
-
-	delete pClass;
-	pClass = nullptr;
 
 	return 0;
 

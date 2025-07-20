@@ -20,6 +20,15 @@ private:
 
 public:
 
+	//Enumeration of possible player classes.
+	const enum PlayerClass {
+		KNIGHT = 1,
+		WIZARD = 2,
+		BARD = 3,
+		NOBLE = 4,
+		WRETCH = 5
+	};
+
 	//Getter arguments.
 	int getPlayerLife() const;
 	std::string getPlayerName() const;
@@ -33,5 +42,7 @@ public:
 	void setIsPlayerDead(bool localIsPlayerDead);
 	void setPlayerGender(int gender);
 	void setPlayerClass(int pClass);
+
+	void setPlayerAttributesAccordinglyToClass();
 };
 

@@ -8,13 +8,7 @@
 class Class
 {
 public:
-	const enum PlayerClass {
-		KNIGHT = 1,
-		WIZARD = 2,
-		BARD = 3,
-		NOBLE = 4,
-		WRETCH = 5
-	};
+
 public:
 	void setAttributesAccordinglyToPlayerClassOfChoice(Player* player);
 };
