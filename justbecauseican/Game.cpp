@@ -129,7 +129,7 @@ int Game::run() {
 	
 	setup(player, pronouns);
 
-	//Delete pointers to PREVENT MEMORY LEAK!!!!
+	//Delete and Nullify pointers to PREVENT MEMORY LEAK!!!!
 	delete player;
 	player = nullptr;
 
