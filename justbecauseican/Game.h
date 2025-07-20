@@ -22,6 +22,7 @@ public:
 	void settingThePlayerGender(Player* player);
 	void settingThePlayerClass(Player* player, Pronouns* pronouns);
 
+	void setup(Player* player, Pronouns* pronouns);
 	int run();
 
 };

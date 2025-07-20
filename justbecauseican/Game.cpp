@@ -115,25 +115,28 @@ void Game::settingThePlayerClass(Player* player, Pronouns* pronouns) {
 
 //========================================= GAME CORE =====================================//
 
-int Game::run() {
+void Game::setup(Player* player, Pronouns* pronouns) {
+	std::cout << "Hello, welcome to this prototype!\n";
+	settingHowThePlayerShouldBeCalled(player);
+	settingThePlayerGender(player);
+	settingThePlayerClass(player, pronouns);
+}
 
+int Game::run() {
+	//Create pointers.
 	Player* player = new Player();
 	Pronouns* pronouns = new Pronouns();
+	
+	setup(player, pronouns);
 
-	std::cout << "Hello, welcome to this prototype!\n";
-
-	settingHowThePlayerShouldBeCalled(player);
-
-	settingThePlayerGender(player);
-
-	settingThePlayerClass(player, pronouns);
-
+	//Delete pointers to PREVENT MEMORY LEAK!!!!
 	delete player;
 	player = nullptr;
 
 	delete pronouns;
 	pronouns = nullptr;
 
+	//Return 0 for the main func.
 	return 0;
 
 }
