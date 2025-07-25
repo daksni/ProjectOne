@@ -109,15 +109,15 @@ void Player::vomitAllAttr() {
 	}
 
 	if (Player::getIsPlayerDead() == true) {
-		isDead = "Yes";
+		isDead = "Dead";
 	}
 	else if (Player::getIsPlayerDead() == false) {
-		isDead = "No";
+		isDead = "Alive";
 	}
 
 	std::cout << "\n\nHere are your attributes:\nName: " << Player::getPlayerName() << "\n" <<
 		"Gender: " << gender << "\n" <<
 		"Class: " << pClass << "\n" <<
-		"Is player dead?: " << isDead << "\n" <<
+		"The player is: " << isDead << "\n" <<
 		"Player life: " << Player::getPlayerLife();
 }
